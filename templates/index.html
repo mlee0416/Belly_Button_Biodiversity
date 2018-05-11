@@ -1,0 +1,57 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Belly Button Biodiversity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron col-md-12">
+            <h1>Belly Button Biodiversity</h1>
+            <h4>The coolest study of biodiversity on the human body</h4>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!--Dropdown Selection-->
+            <div class="col-md-3">
+                <div class="well">
+                    <h3>Select Sample:</h3>
+                    <select id="select-dataset" onchange="optionChanged(this.value)"></select>
+                    </select> 
+                </div>
+            </div>
+            <!--Sample MetaData Box-->
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3>MetaData</h3></div>
+                    <div class="panel-body" id="metadata-sample"></div>
+                </div>
+            </div>
+            <!--Pie Chart-->
+            <div class="col-md-6">
+                <h3>Bacteria Present Chart</h3>
+                <div id="pie">
+                </div>
+            </div>
+        </div>   
+    </div>
+    <!--Bubble Chart-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Sample Value vs. OTU ID</h3>
+                <div id="bubble">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
